@@ -1,33 +1,25 @@
-import Button from '@/components/Button'
-import NavBar from '@/components/NavBar'
-import Image from 'next/image'
+import Button from '@/components/Button';
+import Image from 'next/image';
 
-export default function Home() {
+export default function Inicial() {
   return (
-
     <>
-      <NavBar />
-
-      <div className='flex flex-col'>
-
-            <div className='flex justify-center items-baseline gap-2 py-20'>
-                  <Image src="/cenoura.png" alt="canteiro" width={32} height={44} />
-                  <h2 className='text-lime-200'>Home</h2>
-            </div>
-
-            <div className='flex justify-center'>
-                       <p className='text-lime-400 text-xl'>Clique no botão e comece mudar o mundo.</p>
-            </div>
-
-            <div className='flex justify-center py-24'>
-                      <Button element='link'  href='/cadastroplanta'>Vamos Plantar</Button>
-            </div>
+      <div className='flex justify-center mt-2'>
+        <Image src="/LOGOSEU.png" alt="canteiro" width={268} height={109} />
       </div>
 
+      <div className='flex justify-center'>
+        <div className='pt-20 w-48 flex justify-around'>
+          <Button element='link' href="/cadastro">Cadastro</Button>
+          <Button element='link' href="/login">Login</Button>
+        </div>
+      </div>
 
-      
-      
+      <div className='relative' style={{ minHeight: 'calc(100vh - 109px - 20px - 100px)' }}>
+        <div className='absolute bottom-0 left-0 w-full'>
+          <Image src="/arv.png" alt="canteiro" layout="responsive" width={1323} height={387} />
+        </div>
+      </div>
     </>
-
-  )
+  );
 }

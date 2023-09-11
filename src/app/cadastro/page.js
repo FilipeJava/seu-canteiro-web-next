@@ -1,5 +1,3 @@
-
-
 'use client'
 
 import { useState } from 'react';
@@ -39,14 +37,11 @@ export default function Cadastro() {
       });
 
       if (response.ok) {
-        // Lida com uma resposta bem-sucedida (por exemplo, redirecionamento ou exibição de uma mensagem de sucesso)
         console.log('Dados enviados com sucesso!');
       } else {
-        // Lida com erros de resposta (por exemplo, exibição de mensagem de erro)
         console.error('Erro ao enviar dados');
       }
     } catch (error) {
-      // Lida com erros durante a solicitação (por exemplo, erro de rede)
       console.error('Erro na solicitação:', error);
     }
   };
@@ -58,13 +53,14 @@ export default function Cadastro() {
       </div>
 
       <div className='flex flex-col items-center'>
-        <h2 className='text-lime-400 text-lg my-6'>Cadastro</h2>
+        <h2 className='text-lime-400 font-semibold text-lg my-6'>CADASTRO</h2>
         <TextInput
           name="nome"
           id="nome"
           label="Nome Completo"
           value={formData.nome}
           onChange={handleChange}
+          placeholder="Digite seu nome completo"
         />
         <TextInput
           name="cpf"
@@ -72,13 +68,15 @@ export default function Cadastro() {
           label="CPF"
           value={formData.cpf}
           onChange={handleChange}
+          placeholder="Digite seu CPF"
         />
         <TextInput
           name="data"
           id="data"
-          label="Data Nascimento"
+          label="Data de Nascimento"
           value={formData.data}
           onChange={handleChange}
+          placeholder="Digite a data no formato yyyy-MM-dd"
         />
         <TextInput
           name="telefone"
@@ -86,6 +84,7 @@ export default function Cadastro() {
           label="Telefone"
           value={formData.telefone}
           onChange={handleChange}
+          placeholder="Digite seu telefone"
         />
          <TextInput
           name="email"
@@ -93,6 +92,7 @@ export default function Cadastro() {
           label="Email "
           value={formData.email}
           onChange={handleChange}
+          placeholder="Digite seu email"
         />
         <TextInput
           name="senha"
@@ -101,20 +101,22 @@ export default function Cadastro() {
           type="password"
           value={formData.senha}
           onChange={handleChange}
+          placeholder="Digite sua senha"
         />
         <TextInput
           name="rsenha"
           id="rsenha"
           label="Repita a Senha"
           type="password"
+          placeholder="Digite sua senha novamente"
         
         />
       </div>
 
       <div className='flex justify-center'>
         <div className='pt-20 w-48 flex justify-around'>
+          <Button element='link' variant='secondary' href="/">Voltar</Button>
           <Button type="submit">Salvar</Button>
-          <Button element='link' href="/inicial">Voltar</Button>
         </div>
       </div>
     </form>

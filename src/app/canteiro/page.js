@@ -1,5 +1,5 @@
 import NavBar from '@/components/NavBar';
-import PlantaRow from './canteiro/PlantaRow';
+import PlantaRow from '../cadastroplanta/PlantaRow';
 import Button from '@/components/Button';
 
 async function getPlantas(){
@@ -19,7 +19,7 @@ export default async function Plantas()  {
         <main className='bg-slate-950 m-20 p-8'>
             <div className='flex justify-between'>
                 <h2>Canteiro</h2>
-                <Button href="cadastroplanta/new">Adicionar Planta</Button>
+                <Button href="new/cadastroplanta">Adicionar Planta</Button>
             </div> 
             <div>
                 <div id='data' className='text-slate-300' >

@@ -1,12 +1,9 @@
-
-
 'use client'
 
 import { useState } from 'react';
 import Button from '@/components/Button';
 import TextInput from '@/components/TextInput';
 import Image from 'next/image';
-
 
 export default function Cadastro() {
   const [formData, setFormData] = useState({
@@ -35,14 +32,11 @@ export default function Cadastro() {
       });
 
       if (response.ok) {
-        // Lida com uma resposta bem-sucedida (por exemplo, redirecionamento ou exibição de uma mensagem de sucesso)
         console.log('Dados enviados com sucesso!');
       } else {
-        // Lida com erros de resposta (por exemplo, exibição de mensagem de erro)
         console.error('Erro ao enviar dados');
       }
     } catch (error) {
-      // Lida com erros durante a solicitação (por exemplo, erro de rede)
       console.error('Erro na solicitação:', error);
     }
   };
@@ -55,30 +49,31 @@ export default function Cadastro() {
 
       <div className='flex flex-col items-center'>
         <h2 className='text-lime-400 text-lg my-6'>Login</h2>
-       
      
          <TextInput
           name="email"
           id="email"
-          label="Email "
+          label="Seu email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="exemplo@exemplo.com"
         />
         <TextInput
           name="senha"
           id="senha"
-          label="Senha"
+          label="Sua senha"
           type="password"
           value={formData.senha}
           onChange={handleChange}
+          placeholder="********"
         />
        
       </div>
 
       <div className='flex justify-center'>
         <div className='pt-20 w-48 flex justify-around'>
-          <Button type="submit">Login</Button>
-          <Button element='link' href="/inicial">Voltar</Button>
+          <Button element='link' variant='secondary' href="/">Voltar</Button>
+          <Button type="submit" href="/inicial">Entrar</Button>
         </div>
       </div>
     </form>
