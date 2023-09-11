@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 async function getPlantas(){
   const url = "http://localhost:8080/api/v1/canteiro/1"
 
-  const response =  await fetch(url , {next:{revalidate :3600}})
+  const response =  await fetch(url, {next:{revalidate :3600}})
   return response.json()
 }
 

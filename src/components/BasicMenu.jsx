@@ -4,7 +4,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +24,6 @@ export default function BasicMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <ChevronDownIcon className='h-6 w-6'/>
       </Button>
       <Menu
         id="basic-menu"

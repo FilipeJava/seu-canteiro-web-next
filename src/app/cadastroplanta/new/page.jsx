@@ -7,11 +7,24 @@ import { useState } from 'react';
 export default function CadastroPlanta() {
 
   const [selectedOption, setSelectedOption] = useState('');
-  const [NomeCientifico, setNomeCientifico] = useState('');
-  const [Frequencia, setFrequencia] = useState('');
-  const [Apelido, setApelido] = useState('');
-  const [Quantidade, setQuantidade] = useState(''); 
-  const [data, setData] = useState('');
+  const [nomeCientifico, setNomeCientifico] = useState('');
+  const [regacao, setRegacao] = useState('');
+  const [apelido, setApelido] = useState('');
+  const [quantidadePlantada, setQuantidadePlantada] = useState(''); 
+  const [dataPlantio, setDataPlantio] = useState('');
+  const [dataColheita, setDataColheita] = useState('');
+
+  const planta = {
+    nomePlanta: selectedOption,
+    regacao,
+    nomeCientifico,
+    apelido
+  };
+  const plantio = {
+    quantidadePlantada,
+    dataPlantio,
+    dataColheita
+  }
 
 
   const handleChange = (e) => {
@@ -20,21 +33,17 @@ export default function CadastroPlanta() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/seu-endpoint-de-envio', {
+      const response = await fetch('http://localhost:8080/api/v1/planta/1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          NomeCientifico,
-          Frequencia,
-          Apelido, 
-          Quantidade, 
-          data,
-          PlantaSelecionada: selectedOption,
-        }),
-      });
-
+        body: JSON.stringify({ planta, plantio })
+      })
+      .then(response => response.json())
+      .then(responseJson => {
+      console.log(responseJson);
+      })
       if (response.ok) {
         console.log('Dados enviados com sucesso!');
       } else {
@@ -67,11 +76,12 @@ export default function CadastroPlanta() {
             <option value="Coentro" className='text-black'>Coentro</option>
             <option value="Feião" className='text-black'>Feijão</option>
         </select>
-        <TextInput name="NomeCientifico" id="NomeCientifico" label="Nome Científico" value={NomeCientifico} onChange={(e) => setNomeCientifico(e.target.value)} />
-        <TextInput name="Frequencia" id="Frequencia" label="Frequencia de Irrigação" value={Frequencia} onChange={(e) => setFrequencia(e.target.value)} />
-        <TextInput name="Apelido" id="Apelido" label="Apelido da Planta" value={Apelido} onChange={(e) => setApelido(e.target.value)} />
-        <TextInput name="Quantidade" id="Quantidade" label="Quantidade" value={Quantidade} onChange={(e) => setQuantidade(e.target.value)} />
-        <TextInput name="data" id="data" label="Data do Plantio" value={data} onChange={(e) => setData(e.target.value)} />
+        <TextInput name="nomeCientifico" id="nomeCientifico" label="Nome Científico" value={nomeCientifico} onChange={(e) => setNomeCientifico(e.target.value)} />
+        <TextInput name="regacao" id="regacao" label="Frequencia de Irrigação" value={regacao} onChange={(e) => setRegacao(e.target.value)} />
+        <TextInput name="apelido" id="apelido" label="Apelido da Planta" value={apelido} onChange={(e) => setApelido(e.target.value)} />
+        <TextInput name="quantidadePlantada" id="quantidadePlantada" label="Quantidade" value={quantidadePlantada} onChange={(e) => setQuantidadePlantada(e.target.value)} />
+        <TextInput name="dataPlantio" id="dataPlantio" label="Data do Plantio" value={dataPlantio} onChange={(e) => setDataPlantio(e.target.value)} />
+        <TextInput name="dataColheita" id="dataColheita" label="Data da Colheita" value={dataColheita} onChange={(e) => setDataColheita(e.target.value)} />
         
         <div className="flex justify-center">
         <div className='pt-20 w-48 flex justify-around'>

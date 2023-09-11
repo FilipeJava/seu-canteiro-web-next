@@ -17,7 +17,7 @@ export default function Home() {
             </div>
 
             <div className='flex justify-center py-24'>
-                      <Button element='link'  href='./new/cadastroplanta'>Vamos Plantar</Button>
+                      <Button element='link'  href='/cadastroplanta/new'>Vamos Plantar</Button>
             </div>
       </div>
     </>
