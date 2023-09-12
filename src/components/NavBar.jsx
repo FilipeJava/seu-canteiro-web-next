@@ -12,7 +12,7 @@ const NavBar = () => {
           <li> <Link href='/inicial' className='text-black text-xl'>Home</Link></li>
           <li> <Link href='/sobre' className='text-black text-xl'>Sobre Nós</Link></li>
           <li> <Link href='/chat' className='text-black text-xl'>Chat</Link></li>
-          <li> <Link href='/canteiro' className='text-black text-xl'>Canteiro</Link></li>
+          <li> <Link href='/cadastroplanta' className='text-black text-xl'>Canteiro</Link></li>
         </ul>
 
         <div className='h-14 w-14 rounded-full overflow-hidden '>

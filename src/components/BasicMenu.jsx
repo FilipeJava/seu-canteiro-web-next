@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -16,7 +15,7 @@ export default function BasicMenu() {
   };
 
   return (
-    <div >
+    <div>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -24,6 +23,7 @@ export default function BasicMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
+        Dashboard
       </Button>
       <Menu
         id="basic-menu"
@@ -34,9 +34,9 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Editar</MenuItem>
-        <MenuItem onClick={handleClose}>Apagar</MenuItem>
-       
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>
   );

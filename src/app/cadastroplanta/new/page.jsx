@@ -15,7 +15,7 @@ export default function CadastroPlanta() {
   const [dataColheita, setDataColheita] = useState('');
 
   const planta = {
-    nomePlanta: selectedOption,
+    nome: selectedOption,
     regacao,
     nomeCientifico,
     apelido
