@@ -11,7 +11,7 @@ Acompanhamento personalizado: O aplicativo permite que os usuários registrem e 
  
 Através dessas funcionalidades, o aplicativo Seu Canteiro permite que os usuários administrem melhor os processos produtivos e distributivos de alimentos, garantindo uma abordagem mais segura e controlada para a agricultura urbana. Ele capacita os usuários a cultivarem seus próprios alimentos com confiança, fornecendo informações atualizadas, orientações personalizadas nos. Isso resulta em uma maior segurança alimentar, uma melhor gestão dos recursos disponíveis e uma maior autonomia para as pessoas nas áreas urbanas. 
 
-## Link do vídeo no YouTube: 
+## Link do vídeo no YouTube: https://www.youtube.com/watch?v=6UwrZW54skM
     
 - Observações :
        
