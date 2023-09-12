@@ -23,6 +23,7 @@ export default function CadastroPlanta() {
       return
     }
     setMenssagem("planta cadastrada")
+    redirect("/cadastroplanta")
   }
 
 

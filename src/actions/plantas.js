@@ -1,7 +1,7 @@
 'use server'
 
 
-
+import { revalidatePath } from "next/cache"
 
 
 export async function create(formData) {
@@ -38,6 +38,7 @@ export async function create(formData) {
      if (resp.status!==200){
         return {error:"erro ao cadastrar"}
      }
+     revalidatePath("/cadastroplanta")
 return  {ok:"cadastro de planta efetuado"}
 
 }
