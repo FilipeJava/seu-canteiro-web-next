@@ -27,7 +27,7 @@ export default async function Plantas()  {
             <div>
                 <div id='data' className='text-slate-300' >
                 {data.map(planta =>{
-                    console.log
+                    console.log(data)
                     return <PlantaRow planta={planta}/>
                 })}
                 </div>
