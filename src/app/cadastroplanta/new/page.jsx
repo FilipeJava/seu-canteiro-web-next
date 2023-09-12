@@ -3,6 +3,10 @@ import Button from '@/components/Button';
 import NavBar from '@/components/NavBar';
 import TextInput from '@/components/TextInput';
 import { useState } from 'react';
+import { redirect } from 'next/navigation'
+import { create } from '@/actions/plantas';
+
+
 
 export default function CadastroPlanta() {
 
@@ -13,17 +17,18 @@ export default function CadastroPlanta() {
   const [quantidadePlantada, setQuantidadePlantada] = useState(''); 
   const [dataPlantio, setDataPlantio] = useState('');
   const [dataColheita, setDataColheita] = useState('');
+  const [messagem,setMenssagem] = useState(''); 
 
-  const planta = {
-    nome: selectedOption,
-    regacao,
-    nomeCientifico,
-    apelido
-  };
-  const plantio = {
-    quantidadePlantada,
-    dataPlantio,
-    dataColheita
+
+
+
+   async function handleSubmit(formData){
+    const resp = await create(formData)
+    if(resp.error){
+      setMenssagem(resp.error)
+      return
+    }
+    setMenssagem("planta cadastrada")
   }
 
 
@@ -31,34 +36,16 @@ export default function CadastroPlanta() {
     setSelectedOption(e.target.value);
   };
 
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/api/v1/planta/1', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ planta, plantio })
-      })
-      .then(response => response.json())
-      .then(responseJson => {
-      console.log(responseJson);
-      })
-      if (response.ok) {
-        console.log('Dados enviados com sucesso!');
-      } else {
-        console.error('Erro ao enviar dados');
-      }
-    } catch (error) {
-      console.error('Erro na solicitação:', error);
-    }
-  };
+
+
+ 
 
   return (
     <>
       <NavBar />
-      <div className='flex flex-col mt-8 items-center'>
+      <main className='flex flex-col mt-8 items-center'>
         <h2 className=' text-lime-400 text-lg mb-6'>Cadastro de Sementes</h2>
+        <form action={handleSubmit}>
         <label htmlFor="selectField" className='text-black-200 font-semibold'>Nome da Planta</label>
         <select
           className='text-black bg-lime-200 w-96 h-8 rounded outline-none'
@@ -86,10 +73,13 @@ export default function CadastroPlanta() {
         <div className="flex justify-center">
         <div className='pt-20 w-48 flex justify-around'>
           <Button href="/inicial" variant="secondary">Cancelar</Button>
-          <Button onClick={handleSubmit}>Salvar</Button>
+          <Button element='botao'>Salvar</Button>
         </div>
+        
         </div>
-      </div>
+        <p>{messagem}</p>
+        </form>
+      </main>
     </>
   );
 }
