@@ -1,16 +1,8 @@
 'use server'
 
-
 import { revalidatePath } from "next/cache"
 
-
 export async function create(formData) {
-
-    // const {nome, regacao, nomeCientifico, apelido, quantidadePlantada, dataPlantio, dataColheita } = formData;
-
-    const nome = formData.get('nome')
-
-    console.log(nome)
 
     const planta = {
         nome:formData.get('nome'),
@@ -41,4 +33,10 @@ export async function create(formData) {
      revalidatePath("/cadastroplanta")
 return  {ok:"cadastro de planta efetuado"}
 
+}
+
+export async function getPlantas(){
+  await new Promise(r => setTimeout(r, 5000));
+  const response = await fetch("http://localhost:8080/api/v1/canteiro/1",  { next: { revalidate: 0 } })
+  return response.json()
 }
