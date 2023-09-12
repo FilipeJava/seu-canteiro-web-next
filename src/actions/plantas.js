@@ -6,18 +6,22 @@
 
 export async function create(formData) {
 
-    const {nome, regacao, nomeCientifico, apelido, quantidadePlantada, dataPlantio, dataColheita } = formData;
+    // const {nome, regacao, nomeCientifico, apelido, quantidadePlantada, dataPlantio, dataColheita } = formData;
+
+    const nome = formData.get('nome')
+
+    console.log(nome)
 
     const planta = {
-        nome,
-        regacao,
-        nomeCientifico,
-        apelido
+        nome:formData.get('nome'),
+        regacao:formData.get('regacao'),
+        nomeCientifico:formData.get('nomeCientifico'),
+        apelido:formData.get('apelido')
       };
       const plantio = {
-        quantidadePlantada,
-        dataPlantio,
-        dataColheita
+        quantidadePlantada:formData.get('quantidadePlantada') ,
+        dataPlantio:formData.get('dataPlantio'),
+        dataColheita:formData.get('dataColheita') 
       }
     
       console.log(formData)
@@ -31,7 +35,7 @@ export async function create(formData) {
         body: JSON.stringify({ planta, plantio })    
     }
      const resp = await fetch(url,options)
-     if (resp.status!==201){
+     if (resp.status!==200){
         return {error:"erro ao cadastrar"}
      }
 return  {ok:"cadastro de planta efetuado"}
