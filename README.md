@@ -11,12 +11,13 @@ Acompanhamento personalizado: O aplicativo permite que os usuários registrem e 
  
 Através dessas funcionalidades, o aplicativo Seu Canteiro permite que os usuários administrem melhor os processos produtivos e distributivos de alimentos, garantindo uma abordagem mais segura e controlada para a agricultura urbana. Ele capacita os usuários a cultivarem seus próprios alimentos com confiança, fornecendo informações atualizadas, orientações personalizadas nos. Isso resulta em uma maior segurança alimentar, uma melhor gestão dos recursos disponíveis e uma maior autonomia para as pessoas nas áreas urbanas. 
 
+## Link do vídeo no YouTube: 
     
 - Observações :
        
     - Aqui está o link para o projeto do frontEnd(React Native), https://github.com/mariananieton/SeuCanteiro , clone o repositorio e nos endpoints deve-se colocar o ip local caso for emular pelo android .
     - Aqui está o link para o projeto do backEnd(Java), https://github.com/FilipeJava/seucanteiro
-    - Link do vídeo no YouTube: 
+    
 
 - Integrantes : 
     - RM93042 - FILIPE SANTOS DA SILVA
