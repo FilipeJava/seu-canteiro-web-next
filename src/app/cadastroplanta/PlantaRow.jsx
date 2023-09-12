@@ -6,11 +6,10 @@ export default function PlantaRow ({planta}){
             <div className="h-6 w-6" />
                 <span className='text-lime-600 text-l'>{planta.planta.nome}</span>
                 <span className='text-lime-600 text-l'>{planta.planta.nomeCientifico}</span>
-                <span className='text-lime-600 text-l'>{planta.plantio.regacao}</span>
-                <span className='text-lime-600 text-l'>{planta.plantio.apelido}</span>
+                <span className='text-lime-600 text-l'>{planta.planta.regacao}</span>
+                <span className='text-lime-600 text-l'>{planta.planta.apelido}</span>
                 <span className='text-lime-600 text-l'>{planta.plantio.quantidadePlantada}</span>
                 <span className='text-lime-600 text-l'>{planta.plantio.dataPlantio}</span>
-                <span className='text-lime-600 text-l'>{planta.plantio.dataColheita}</span>
                 <BasicMenu/>
             </div>      
     );
